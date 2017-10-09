@@ -6,14 +6,17 @@ if(document.querySelector(".slider-container")) {
   var controlRight = document.querySelector("#slider-fruit .slider-control-right a");
   controlLeft.addEventListener('click',slideLeft, true);
   controlRight.addEventListener('click',slideRight, true);
-  console.log(controlRight);
+  // console.log(controlRight);
 }
 
 function slideLeft(e){
   e.preventDefault();
-  console.log("left");
+  let slider = e.target.parentNode.parentNode.parentNode.parentNode;
+  slider.querySelector(".slider-content-container").transform = "translate3d(-90px,0,0)";
+  // console.log("left");
 }
 function slideRight(e){
   e.preventDefault();
   console.log("right");
+
 }
