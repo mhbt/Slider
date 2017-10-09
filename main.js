@@ -12,7 +12,9 @@ if(document.querySelector(".slider-container")) {
 function slideLeft(e){
   e.preventDefault();
   let slider = e.target.parentNode.parentNode.parentNode.parentNode;
-  slider.querySelector(".slider-content-container").transform = "translate3d(-90px,0,0)";
+  // slider.querySelector(".slider-content-container").classList.add('translate');
+
+  slider.querySelector(".slider-content-container").style.transform = "translate3d(-900px,0,0)";
   // console.log("left");
 }
 function slideRight(e){
