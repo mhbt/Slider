@@ -1,0 +1,75 @@
+/*
+** Temporary Classes
+*/
+.container {
+  background-color: #f2f2f2;
+  padding: 0;
+}
+.slider-content-container {
+  background-color: #ffffff;
+}
+
+
+/*
+** Neccessary css
+*/
+
+.slider-container {
+  min-height: 300px;
+  position: relative;
+  overflow-x: hidden;
+}
+.slider-control-container {
+  position: absolute;
+  width: 100px;
+  text-align: center;
+  background-color: rgba(255,255,255,0.1);
+  height: 300px;
+}
+.slider-control {
+    position: absolute;
+    top: 50%;
+    line-height: 24px;
+    font-size: 12px;
+    margin-top: -24px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+}
+.slider-control-left {
+  left: 25%;
+}
+.slider-control-right {
+  right: 25%;
+}
+.slider-control a {
+  text-decoration: none;
+  color: white;
+}
+.control-right {
+  right: 0px;
+
+}
+.control-left {
+  left: 0px;
+}
+.slider-content::before, .slider-content::after {
+  display: table;
+  content: '';
+  clear: both;
+}
+.slider-content-container {
+  display: block;
+  width:20000px;
+  margin: 0 auto;
+  min-height: inherit;
+}
+.slider-content {
+  float: left;
+  width: 150px;
+  background-color: rgba(255,0,0,0.4);
+  height: 250px;
+  margin: 25px 0;
+  border: 1px solid #c1c1c1;
+}
