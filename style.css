@@ -18,6 +18,7 @@
   min-height: 300px;
   position: relative;
   overflow-x: hidden;
+  z-index: 0;
 }
 .slider-control-container {
   position: absolute;
@@ -60,6 +61,8 @@
   clear: both;
 }
 .slider-content-container {
+  position: relative;
+  z-index: -1;
   display: block;
   width:20000px;
   margin: 0 auto;
