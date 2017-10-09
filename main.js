@@ -22,3 +22,5 @@ function slideRight(e){
   console.log("right");
 
 }
+
+function calculatetranslate
