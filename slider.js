@@ -24,6 +24,7 @@ if (document.querySelector(".slider-container")) {
           if (slider.now >= 0) {
             slider.now = 0;
             slider.controlLeft.classList.add("hidden");
+            slider.querySelector(".opacity-end").style.cssText = null;
           } else {
             slider.controlLeft.classList.remove("hidden");
             slider.querySelector(".opacity-end").style.cssText = null;
