@@ -90,7 +90,7 @@ body {
   width:20000px;
   margin: 0 auto;
   min-height: inherit;
-  transition:  1s transform ease-in-out;
+  transition:  0.5s transform ease;
 }
 .slider-content {
   float: left;
@@ -103,4 +103,19 @@ body {
   width: 100%;
   height: 100%;
 
+}
+@media only screen and (max-width: 1200px) {
+  .opacity-end {
+    width: 98px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .opacity-end {
+    width: 50px;
+  }
+}
+@media only screen and (max-width: 772px) {
+  .opacity-end {
+    display: none;
+  }
 }

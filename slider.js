@@ -14,18 +14,20 @@ if (document.querySelector(".slider-container")) {
       if (sliderList[`${slider.id}`].now >= 0 ){
         sliderList[`${slider.id}`].controlLeft.classList.add("hidden");
       }
-      // slider.slide_container.style.width = get_slide_container_width(slider.slide_content)+ "px";
       //left
       sliderList[`${slider.id}`].controlLeft.addEventListener("click",(e)=> {
           e.preventDefault();
-          slider.now += calculateTranslate(slider.content_space);
-          console.log(slider.now);
+          let max_translate = get_max_translate(slider.slide_content,slider.content_space);
+          if (slider.now == 0 - max_translate) slider.now = slider.now_memory;
+          slider.now += calculateTranslate(slider);
           slider.controlRight.classList.remove("hidden");
           if (slider.now >= 0) {
             slider.now = 0;
             slider.controlLeft.classList.add("hidden");
+            slider.querySelector(".opacity-end").style.cssText = null;
           } else {
             slider.controlLeft.classList.remove("hidden");
+            slider.querySelector(".opacity-end").style.cssText = null;
           }
           slider.querySelector(".slider-content-container").style.transform = `translate3d(${slider.now}px,0,0)`;
       }, true);
@@ -34,12 +36,14 @@ if (document.querySelector(".slider-container")) {
         e.preventDefault();
         slider.controlLeft.removeAttribute("disabled", "true");
         slider.controlLeft.classList.remove("hidden");
-        slider.now -= calculateTranslate(slider.content_space);
+        slider.now -= calculateTranslate(slider);
         max_translate = get_max_translate(sliderList[`${slider.id}`].slide_content,sliderList[`${slider.id}`].content_space);
         // console.log(max_translate);
         if (slider.now <= 0- max_translate) {
+          slider.now_memory = slider.now;
           slider.now = -max_translate;
           slider.controlRight.classList.add("hidden");
+          slider.querySelector(".opacity-end").style.left = 0;
         } else {
           slider.controlRight.classList.remove("hidden");
         }
@@ -58,8 +62,24 @@ function get_slide_container_width(contents) {
 function get_max_translate(container, slider_content_space) {
   return get_slide_container_width(container) - slider_content_space.offsetWidth;
 }
-function calculateTranslate(slider_space){
-  console.log(slider_space.offsetWidth);
-  return slider_space.offsetWidth;
+function calculateTranslate(slider){
+  if (window.outerWidth >= 1320) {
+      return slider.slide_content[0].offsetWidth * 6;
+  }
+  else if (window.outerWidth >= 1200) {
+    return slider.slide_content[0].offsetWidth * 5;
+  }
+  else if (window.outerWidth >= 992) {
+    return slider.slide_content[0].offsetWidth * 5;
+  }
+  else if (window.outerWidth >= 852) {
+    return slider.slide_content[0].offsetWidth * 4;
+  }
+  else if (window.outerWidth >= 769) {
+    return slider.slide_content[0].offsetWidth * 3;
+  }
+  else {
+    return slider.slide_content[0].offsetWidth * 2;
+  }
+  console.log(slider.slide_content[0].offsetWidth);
 }
-// get_max_translate(sliderList[`${slider.id}`].slide_content,sliderList[`${slider.id}`].content_space);
