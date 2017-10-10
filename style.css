@@ -104,3 +104,18 @@ body {
   height: 100%;
 
 }
+@media only screen and (max-width: 1200px) {
+  .opacity-end {
+    width: 98px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .opacity-end {
+    width: 50px;
+  }
+}
+@media only screen and (max-width: 772px) {
+  .opacity-end {
+    display: none;
+  }
+}
