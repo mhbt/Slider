@@ -1,6 +1,9 @@
 /*
 ** Temporary Classes
 */
+body {
+  background-color: #f3f3f3;
+}
 .container {
   background-color: #f2f2f2;
   padding: 0;
@@ -35,10 +38,6 @@
     line-height: 24px;
     font-size: 12px;
     margin-top: -24px;
-    background-color: rgba(0,0,0,0.5);
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
 }
 .slider-control-left {
   left: 25%;
@@ -46,13 +45,25 @@
 .slider-control-right {
   right: 25%;
 }
-.slider-control a {
-  text-decoration: none;
+.slider-control button:disabled {
+  cursor: not-allowed;
+}
+.slider-control button {
+  background-color: rgba(0,0,0,0.5);
+  clip-path: circle(40%);
+  width: 30px;
+  height: 30px;
   color: white;
+  border: none;
 }
 .control-right {
   right: 0px;
 
+}
+.slider-content-space {
+  overflow-x: hidden;
+  width: 90%;
+  margin: 0 auto;
 }
 .control-left {
   left: 0px;
@@ -69,6 +80,7 @@
   width:20000px;
   margin: 0 auto;
   min-height: inherit;
+  transition:  1s transform ease-in-out;
 }
 .slider-content {
   float: left;
