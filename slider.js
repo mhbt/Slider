@@ -36,7 +36,7 @@ if (document.querySelector(".slider-container")) {
         slider.controlLeft.classList.remove("hidden");
         slider.now -= calculateTranslate(slider.content_space);
         max_translate = get_max_translate(sliderList[`${slider.id}`].slide_content,sliderList[`${slider.id}`].content_space);
-        console.log(max_translate);
+        // console.log(max_translate);
         if (slider.now <= 0- max_translate) {
           slider.now = -max_translate;
           slider.controlRight.classList.add("hidden");
@@ -59,6 +59,7 @@ function get_max_translate(container, slider_content_space) {
   return get_slide_container_width(container) - slider_content_space.offsetWidth;
 }
 function calculateTranslate(slider_space){
+  console.log(slider_space.offsetWidth);
   return slider_space.offsetWidth;
 }
 // get_max_translate(sliderList[`${slider.id}`].slide_content,sliderList[`${slider.id}`].content_space);
