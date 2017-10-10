@@ -90,7 +90,7 @@ body {
   width:20000px;
   margin: 0 auto;
   min-height: inherit;
-  transition:  1s transform ease-in-out;
+  transition:  0.5s transform ease;
 }
 .slider-content {
   float: left;
