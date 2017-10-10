@@ -17,6 +17,8 @@ if (document.querySelector(".slider-container")) {
       //left
       sliderList[`${slider.id}`].controlLeft.addEventListener("click",(e)=> {
           e.preventDefault();
+          let max_translate = get_max_translate(slider.slide_content,slider.content_space);
+          if (slider.now == 0 - max_translate) slider.now = slider.now_memory;
           slider.now += calculateTranslate(slider);
           slider.controlRight.classList.remove("hidden");
           if (slider.now >= 0) {
@@ -37,6 +39,7 @@ if (document.querySelector(".slider-container")) {
         max_translate = get_max_translate(sliderList[`${slider.id}`].slide_content,sliderList[`${slider.id}`].content_space);
         // console.log(max_translate);
         if (slider.now <= 0- max_translate) {
+          slider.now_memory = slider.now;
           slider.now = -max_translate;
           slider.controlRight.classList.add("hidden");
           slider.querySelector(".opacity-end").style.left = 0;
@@ -60,7 +63,7 @@ function get_max_translate(container, slider_content_space) {
 }
 function calculateTranslate(slider){
   if (window.outerWidth >= 1320) {
-    return slider.slide_content[0].offsetWidth * 6;
+      return slider.slide_content[0].offsetWidth * 6;
   }
   else if (window.outerWidth >= 1200) {
     return slider.slide_content[0].offsetWidth * 5;
