@@ -1,41 +1,30 @@
 /*
-** Temporary Classes
-*/
-body {
-  background-color: #f3f3f3;
-}
-.container {
-  background-color: #f2f2f2;
-  padding: 0;
-}
-.slider-content-container {
-  background-color: #ffffff;
-}
-
-
-/*
 ** Neccessary css
 */
 .translate {
   transform: translate3d(-100px, 0, 0);
 }
 .slider-container {
-  min-height: 300px;
   position: relative;
   overflow-x: hidden;
   z-index: 0;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 20px;
+}
+.slider-container .heading {
+  color: #22A565;
+  margin: 30px 30px;
 }
 .slider-control-container {
   position: absolute;
   width: 100px;
   text-align: center;
-  /*background-color: rgba(255,255,255,0.4);*/
-  height: 300px;
+  height: 300px; /*This is intended to change */
 }
 .opacity-end {
-  width: 120px;
-  height: 250px;
-  margin: 25px 0;
+  width: 120px; /*This is intended to change */
+  height: 300px; /*This is intended to change */
   position: absolute;
   right:0;
   z-index: 0;
@@ -58,11 +47,15 @@ body {
 .slider-control button:disabled {
   cursor: not-allowed;
 }
+.slider-container:hover button {
+  display: inline-block;
+}
 .slider-control button {
-  background-color: rgba(0,0,0,0.5);
+  display: none;
+  background-color: #22A565;
   clip-path: circle(40%);
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   color: white;
   border: none;
 }
@@ -94,9 +87,8 @@ body {
 }
 .slider-content {
   float: left;
-  width: 175px;
-  height: 250px;
-  margin: 25px 0;
+  width: 175px; /*This is intended to change */
+  height: 300px; /*This is intended to change */
   border: 1px solid #c1c1c1;
 }
 .slider-content img {
@@ -106,16 +98,16 @@ body {
 }
 @media only screen and (max-width: 1200px) {
   .opacity-end {
-    width: 98px;
+    width: 98px; /*This is intended to change */
   }
 }
 @media only screen and (max-width: 992px) {
   .opacity-end {
-    width: 50px;
+    width: 50px; /*This is intended to change */
   }
 }
-@media only screen and (max-width: 772px) {
+ @media only screen and (max-width: 450px) {
   .opacity-end {
-    display: none;
+    display: none; /*This is intended to change */
   }
 }
