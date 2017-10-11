@@ -10,7 +10,7 @@
   z-index: 0;
   padding: 0;
   background-color: #fff;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 .slider-container .heading {
   color: #22A565;
@@ -109,5 +109,8 @@
  @media only screen and (max-width: 450px) {
   .opacity-end {
     display: none; /*This is intended to change */
+  }
+  .slider-control-container {
+    display: none;
   }
 }
