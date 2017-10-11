@@ -5,17 +5,17 @@ if (document.querySelector(".slider-container")) {
     sliders.forEach(function ( slider ){
       console.log(`${slider.id} is enabled`);
       sliderList[`${slider.id}`] =  document.querySelector(`#${slider.id}`);
-      sliderList[`${slider.id}`].now = 0;
-      sliderList[`${slider.id}`].controlLeft = sliderList[`${slider.id}`].querySelector(".slider-control-left button");
-      sliderList[`${slider.id}`].controlRight = sliderList[`${slider.id}`].querySelector(".slider-control-right button");
-      sliderList[`${slider.id}`].slide_content = sliderList[`${slider.id}`].querySelectorAll(".slider-content");
-      sliderList[`${slider.id}`].slide_container = sliderList[`${slider.id}`].slide_content[0].parentNode;
-      sliderList[`${slider.id}`].content_space = sliderList[`${slider.id}`].querySelector(".slider-content-space");
-      if (sliderList[`${slider.id}`].now >= 0 ){
-        sliderList[`${slider.id}`].controlLeft.classList.add("hidden");
+      slider.now = 0;
+      slider.controlLeft = sliderList[`${slider.id}`].querySelector(".slider-control-left button");
+      slider.controlRight = sliderList[`${slider.id}`].querySelector(".slider-control-right button");
+      slider.slide_content = sliderList[`${slider.id}`].querySelectorAll(".slider-content");
+      slider.slide_container = sliderList[`${slider.id}`].slide_content[0].parentNode;
+      slider.content_space = sliderList[`${slider.id}`].querySelector(".slider-content-space");
+      if (slider.now >= 0 ){
+        slider.controlLeft.classList.add("hidden");
       }
       //left
-      sliderList[`${slider.id}`].controlLeft.addEventListener("click",(e)=> {
+      slider.controlLeft.addEventListener("click",(e)=> {
           e.preventDefault();
           let max_translate = get_max_translate(slider.slide_content,slider.content_space);
           if (slider.now == 0 - max_translate) slider.now = slider.now_memory;
@@ -32,7 +32,7 @@ if (document.querySelector(".slider-container")) {
           slider.querySelector(".slider-content-container").style.transform = `translate3d(${slider.now}px,0,0)`;
       }, true);
       //right
-      sliderList[`${slider.id}`].controlRight.addEventListener("click", e => {
+      slider.controlRight.addEventListener("click", e => {
         e.preventDefault();
         slider.controlLeft.removeAttribute("disabled", "true");
         slider.controlLeft.classList.remove("hidden");
