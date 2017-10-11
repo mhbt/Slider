@@ -56,12 +56,12 @@ if (document.querySelector(".slider-container")) {
           slider.touchend = e.touches[0].clientX;
         }, false);
         slider.querySelector(".slider-content-space").addEventListener("touchend", (e)=>{
-          console.log(slider.touchend - slider.touchstart);
-          console.log(slider.now + " " + slider.now_memory);
           if (slider.touchend > slider.touchstart) {
             if (slider.now != 0 ) slider.controlLeft.click();
           } else {
-            if (slider.now != slider.now_memory) slider.controlRight.click();
+            let max_translate = get_max_translate(sliderList[`${slider.id}`].slide_content,sliderList[`${slider.id}`].content_space);
+            if (slider.now != 0 - max_translate) slider.controlRight.click();
+            console.log(slider.now);
           }
         }, false);
     });
