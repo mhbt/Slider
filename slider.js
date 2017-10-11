@@ -57,10 +57,11 @@ if (document.querySelector(".slider-container")) {
         }, false);
         slider.querySelector(".slider-content-space").addEventListener("touchend", (e)=>{
           console.log(slider.touchend - slider.touchstart);
+          console.log(slider.now + " " + slider.now_memory);
           if (slider.touchend > slider.touchstart) {
-            slider.controlLeft.click();
+            if (slider.now != 0 ) slider.controlLeft.click();
           } else {
-            slider.controlRight.click();
+            if (slider.now != slider.now_memory) slider.controlRight.click();
           }
         }, false);
     });
