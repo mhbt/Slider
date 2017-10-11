@@ -81,7 +81,9 @@ function get_max_translate(container, slider_content_space) {
   return get_slide_container_width(container) - slider_content_space.offsetWidth;
 }
 function calculateTranslate(slider){
-  if (window.outerWidth >= 1320)  return slider.slide_content[0].offsetWidth * 6;
+  if (window.outerWidth >= 1320) {
+    while (slider.slide_content[0].offsetWidth * i < slider.slider_content_space.offsetWidth){}
+  }
   else if (window.outerWidth >= 1200) return slider.slide_content[0].offsetWidth * 5;
   else if (window.outerWidth >= 992)  return slider.slide_content[0].offsetWidth * 5;
   else if (window.outerWidth >= 852)  return slider.slide_content[0].offsetWidth * 4;
