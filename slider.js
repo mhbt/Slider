@@ -49,6 +49,20 @@ if (document.querySelector(".slider-container")) {
         }
         slider.querySelector(".slider-content-container").style.transform = `translate3d(${slider.now}px,0,0)`;
       }, true);
+        slider.querySelector(".slider-content-space").addEventListener("touchstart", (e)=>{
+          slider.touchstart = e.touches[0].clientX;
+        }, false);
+        slider.querySelector(".slider-content-space").addEventListener("touchmove", (e)=>{
+          slider.touchend = e.touches[0].clientX;
+        }, false);
+        slider.querySelector(".slider-content-space").addEventListener("touchend", (e)=>{
+          console.log(slider.touchend - slider.touchstart);
+          if (slider.touchend > slider.touchstart) {
+            slider.controlLeft.click();
+          } else {
+            slider.controlRight.click();
+          }
+        }, false);
     });
 
   } //End Let Sliders Block

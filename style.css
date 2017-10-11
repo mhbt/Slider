@@ -110,4 +110,7 @@
   .opacity-end {
     display: none; /*This is intended to change */
   }
+  .slider-control-container {
+    display: none;
+  }
 }
