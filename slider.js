@@ -14,6 +14,10 @@ if (document.querySelector(".slider-container")) {
       if (slider.now >= 0 ){
         slider.controlLeft.classList.add("hidden");
       }
+      if( get_slide_content_width(slider.slide_content) * slider.slide_content.length <= slider.content_space.offsetWidth){
+        slider.controlLeft.classList.add("hidden");
+          slider.controlRight.classList.add("hidden");
+      }
       //left
       slider.controlLeft.addEventListener("click",(e)=> {
           e.preventDefault();
